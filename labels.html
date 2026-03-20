@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>At The Studio — PO Request</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* PO-page-only overrides — nothing here exists in styles.css */
+    .po-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 40px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,10,10,0.97);
+    }
+    .po-header img {
+      height: 44px;
+      width: auto;
+      -webkit-mask-image: radial-gradient(ellipse 78% 72% at 50% 50%, black 30%, transparent 100%);
+      mask-image: radial-gradient(ellipse 78% 72% at 50% 50%, black 30%, transparent 100%);
+      mix-blend-mode: lighten;
+    }
+    .po-hero {
+      padding: 80px 0 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--off-black);
+    }
+    .po-hero-text {
+      text-align: center;
+      padding-bottom: 64px;
+    }
+    .po-hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 7vw, 96px);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 0.92;
+      margin-bottom: 20px;
+    }
+    .po-hero-text p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-light);
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .po-pricing-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+    .po-price-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 28px 40px;
+      border-right: 1px solid var(--border);
+      gap: 16px;
+    }
+    .po-price-item:last-child { border-right: none; }
+    .po-form-section {
+      padding: 80px 0 120px;
+      background: var(--black);
+    }
+    .po-form-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .po-form-left h2 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 4vw, 60px);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      line-height: 0.95;
+      margin-bottom: 20px;
+    }
+    .po-form-left p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--gray-light);
+      line-height: 1.9;
+      margin-bottom: 0;
+    }
+    .form-section-divider {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      padding: 20px 0 8px;
+      border-top: 1px solid var(--border);
+      margin-bottom: 4px;
+      grid-column: 1 / -1;
+    }
+    .form-section-divider:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .form-full { grid-column: 1 / -1; }
+    .select-wrap { position: relative; }
+    .select-wrap::after {
+      content: '▾';
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      font-size: 11px;
+      pointer-events: none;
+    }
+    .form-group select { appearance: none; -webkit-appearance: none; cursor: pointer; }
+    .po-footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 40px;
+      text-align: center;
+      background: var(--black);
+    }
+    .po-footer p {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+    @media (max-width: 900px) {
+      .po-pricing-strip { grid-template-columns: 1fr; }
+      .po-price-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .po-price-item:last-child { border-bottom: none; }
+      .po-form-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      .po-hero { padding: 60px 0 0; }
+      .po-hero-text { padding-bottom: 40px; }
+      .po-form-section { padding: 56px 0 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER — logo only, no site nav -->
+  <header class="po-header">
+    <img src="IMG_6772.png" alt="At The Studio">
+  </header>
+
+  <!-- HERO -->
+  <section class="po-hero">
+    <div class="container">
+      <div class="po-hero-text">
+        <p class="eyebrow" style="justify-content:center">Enterprise &amp; Label Bookings</p>
+        <h1>Purchase Order<br>Request</h1>
+        <p>Submit your PO information below. Our team will respond with a formal invoice within 1 business day.</p>
+      </div>
+    </div>
+
+    <!-- Pricing strip -->
+    <div class="container" style="padding:0">
+      <div class="po-pricing-strip">
+
+        <div class="po-price-item">
+          <div>
+            <div class="room-type">A Room</div>
+            <div class="room-price-num">$150</div>
+          </div>
+          <div class="room-price-unit">Per Hour</div>
+        </div>
+
+        <div class="po-price-item">
+          <div>
+            <div class="room-type">B Room</div>
+            <div class="room-price-num">$125</div>
+          </div>
+          <div class="room-price-unit">Per Hour</div>
+        </div>
+
+        <div class="po-price-item">
+          <div>
+            <div class="room-type">Event Space</div>
+            <div class="room-price-num">$150</div>
+          </div>
+          <div class="room-price-unit">Per Hour</div>
+        </div>
+
+        <div class="po-price-item">
+          <div>
+            <div class="room-type">Studio Buyout</div>
+            <div class="room-price-num">$300</div>
+          </div>
+          <div style="text-align:right">
+            <div class="room-price-unit">Per Hour</div>
+            <div class="room-price-unit" style="margin-top:4px;color:var(--red)">2 Engineers Incl.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="po-form-section">
+    <div class="container">
+      <div class="po-form-inner">
+
+        <!-- Left info -->
+        <div class="po-form-left">
+          <p class="eyebrow">PO Request</p>
+          <h2>Submit Your<br>Information</h2>
+          <p>
+            Fill out the form with your company and billing details.
+            We'll generate a formal invoice and send it to your accounts payable contact.
+          </p>
+
+          <dl class="contact-dl" style="margin-top:40px">
+            <div class="contact-row">
+              <dt>Min. Booking</dt>
+              <dd>3 Hours</dd>
+            </div>
+            <div class="contact-row">
+              <dt>Response Time</dt>
+              <dd>1 Business Day</dd>
+            </div>
+            <div class="contact-row">
+              <dt>Payment</dt>
+              <dd>Wire / ACH / Check / Zelle</dd>
+            </div>
+            <div class="contact-row">
+              <dt>Contact</dt>
+              <dd><a href="mailto:info@thestu.co">info@thestu.co</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form">
+          <div class="form-title">PO Request Form</div>
+
+          <form id="po-form" action="https://script.google.com/macros/s/AKfycbyP39ay24vKHJ5zcgQHfPbZYQQGqszVu-LQ1dQFziflQyJvKNbaeNa5XkOwbvrwNViPZg/exec" method="POST">
+
+            <!-- Company Info -->
+            <div class="form-section-divider">Company Information</div>
+
+            <div class="form-group">
+              <label>Company / Label Name *</label>
+              <input type="text" name="company_name" placeholder="e.g. Interscope Records" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Contact Name *</label>
+                <input type="text" name="contact_name" placeholder="First and last name" required>
+              </div>
+              <div class="form-group">
+                <label>Job Title</label>
+                <input type="text" name="job_title" placeholder="e.g. A&amp;R Manager">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" placeholder="billing@label.com" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="+1 (000) 000-0000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Billing Address *</label>
+              <input type="text" name="billing_address" placeholder="Street address, City, State, ZIP" required>
+            </div>
+
+            <!-- Booking Details -->
+            <div class="form-section-divider">Booking Details</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Artist Name *</label>
+                <input type="text" name="artist_name" placeholder="e.g. Chance the Rapper" required>
+              </div>
+              <div class="form-group">
+                <label>Room *</label>
+                <div class="select-wrap">
+                  <select name="room" required>
+                    <option value="" disabled selected>Select a room</option>
+                    <option value="A Room — $150/hr">A Room — $150/hr</option>
+                    <option value="B Room — $125/hr">B Room — $125/hr</option>
+                    <option value="Event Space — $150/hr">Event Space — $150/hr</option>
+                    <option value="Full Studio Buyout — $300/hr (Includes 2 Engineers)">Studio Buyout — $300/hr (2 Engineers Included)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Bringing an Engineer?</label>
+                <div class="select-wrap">
+                  <select name="bringing_engineer">
+                    <option value="" disabled selected>Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <!-- calculated by script from start/end time -->
+                <input type="hidden" name="estimated_hours" id="estimated_hours_hidden">
+              </div>
+            </div>
+
+            <div class="form-group" style="grid-column:1/-1">
+              <label>Session Date(s), Start & End Time(s) *</label>
+              <div id="dates-container">
+                <div class="date-row" style="display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:12px;margin-bottom:10px;align-items:end">
+                  <div class="form-group" style="margin-bottom:0">
+                    <label style="font-size:9px;opacity:0.6">Date</label>
+                    <input type="date" name="session_dates[]" required>
+                  </div>
+                  <div class="form-group" style="margin-bottom:0">
+                    <label style="font-size:9px;opacity:0.6">Start Time</label>
+                    <input type="time" name="session_times[]" required>
+                  </div>
+                  <div class="form-group" style="margin-bottom:0">
+                    <label style="font-size:9px;opacity:0.6">End Time</label>
+                    <input type="time" name="session_end_times[]" required>
+                  </div>
+                  <div style="padding-bottom:2px">
+                    <button type="button" class="remove-date-btn" onclick="removeDate(this)" style="display:none;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--gray-light);font-family:var(--font-mono);font-size:11px;padding:14px 16px;cursor:pointer;transition:all 0.2s" onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--red)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--gray-light)'">✕</button>
+                  </div>
+                </div>
+              </div>
+              <button type="button" onclick="addDate()" style="margin-top:8px;background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--gray-light);font-family:var(--font-mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:10px 20px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px" onmouseover="this.style.borderColor='var(--red)';this.style.color='var(--white)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.15)';this.style.color='var(--gray-light)'">+ Add Another Date</button>
+            </div>
+
+            <!-- PO Info -->
+            <div class="form-section-divider">Purchase Order Information</div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>PO Number</label>
+                <input type="text" name="po_number" placeholder="If already issued">
+              </div>
+              <div class="form-group">
+                <label>Payment Terms</label>
+                <div class="select-wrap">
+                  <select name="payment_terms">
+                    <option value="" disabled selected>Select terms</option>
+                    <option value="Net 15">Net 15</option>
+                    <option value="Net 30">Net 30</option>
+                    <option value="Net 45">Net 45</option>
+                    <option value="Net 60">Net 60</option>
+                    <option value="Due on receipt">Due on receipt</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Preferred Payment Method</label>
+                <div class="select-wrap">
+                  <select name="payment_method">
+                    <option value="" disabled selected>Select method</option>
+                    <option value="Wire Transfer">Wire Transfer</option>
+                    <option value="ACH">ACH Bank Transfer</option>
+                    <option value="Check">Check</option>
+                    <option value="Zelle">Zelle</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Accounts Payable Email</label>
+                <input type="email" name="ap_email" placeholder="ap@label.com">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Additional Information</label>
+              <textarea name="additional_info" placeholder="" style="min-height:140px"></textarea>
+            </div>
+
+            <div class="form-foot">
+              <small>Our team will respond within 1 business day. Urgent? Email <a href="mailto:info@thestu.co">info@thestu.co</a></small>
+              <button type="submit" class="btn btn-red">Submit Request &rarr;</button>
+            </div>
+
+          </form>
+
+          <div class="form-status" id="form-status"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="po-footer">
+    <p>&copy; 2025 At The Studio &nbsp;&middot;&nbsp; 459 N. Milwaukee Ave, Chicago IL &nbsp;&middot;&nbsp; <a href="mailto:info@thestu.co">info@thestu.co</a></p>
+  </footer>
+
+  <script>
+
+    // ── HOUR CALCULATION ──
+    function calcHours(start, end) {
+      if (!start || !end) return 0;
+      var s = start.split(':').map(Number);
+      var e = end.split(':').map(Number);
+      var startMins = s[0] * 60 + s[1];
+      var endMins   = e[0] * 60 + e[1];
+      if (endMins <= startMins) endMins += 24 * 60;
+      return (endMins - startMins) / 60;
+    }
+
+    // ── ADD / REMOVE DATE ROWS ──
+    function addDate() {
+      var container = document.getElementById('dates-container');
+      var row = document.createElement('div');
+      row.className = 'date-row';
+      row.style.cssText = 'display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:12px;margin-bottom:10px;align-items:end';
+      row.innerHTML =
+        '<div class="form-group" style="margin-bottom:0">' +
+          '<label style="font-size:9px;opacity:0.6">Date</label>' +
+          '<input type="date" name="session_dates[]" required>' +
+        '</div>' +
+        '<div class="form-group" style="margin-bottom:0">' +
+          '<label style="font-size:9px;opacity:0.6">Start Time</label>' +
+          '<input type="time" name="session_times[]" required>' +
+        '</div>' +
+        '<div class="form-group" style="margin-bottom:0">' +
+          '<label style="font-size:9px;opacity:0.6">End Time</label>' +
+          '<input type="time" name="session_end_times[]" required>' +
+        '</div>' +
+        '<div style="padding-bottom:2px">' +
+          '<button type="button" onclick="removeDate(this)" style="background:transparent;border:1px solid rgba(255,255,255,0.15);color:var(--gray-light);font-family:var(--font-mono);font-size:11px;padding:14px 16px;cursor:pointer">✕</button>' +
+        '</div>';
+      container.appendChild(row);
+      updateRemoveButtons();
+    }
+
+    function removeDate(btn) {
+      btn.closest('.date-row').remove();
+      updateRemoveButtons();
+    }
+
+    function updateRemoveButtons() {
+      var rows = document.querySelectorAll('.date-row');
+      rows.forEach(function(row) {
+        var btn = row.querySelector('button');
+        if (btn) btn.style.display = rows.length > 1 ? 'block' : 'none';
+      });
+    }
+
+    // ── FORM SUBMIT ──
+    document.getElementById('po-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form   = this;
+      var status = document.getElementById('form-status');
+      var btn    = form.querySelector('button[type="submit"]');
+
+      var dates  = Array.from(form.querySelectorAll('[name="session_dates[]"]')).map(function(i){ return i.value; });
+      var starts = Array.from(form.querySelectorAll('[name="session_times[]"]')).map(function(i){ return i.value; });
+      var ends   = Array.from(form.querySelectorAll('[name="session_end_times[]"]')).map(function(i){ return i.value; });
+
+      // Validate 3hr minimum per session
+      var totalHours = 0;
+      for (var i = 0; i < starts.length; i++) {
+        var h = calcHours(starts[i], ends[i]);
+        if (h < 3) {
+          status.className = 'form-status error';
+          status.textContent = 'Each session must be at least 3 hours (minimum booking).';
+          return;
+        }
+        totalHours += h;
+      }
+
+      document.getElementById('estimated_hours_hidden').value = totalHours.toFixed(2);
+
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      var fields = {};
+      new FormData(form).forEach(function(val, key) {
+        if (key === 'session_dates[]' || key === 'session_times[]' || key === 'session_end_times[]') return;
+        fields[key] = val;
+      });
+
+      fields.estimated_hours = totalHours.toFixed(2);
+      fields.requested_date  = dates[0] || '';
+      fields.start_time      = starts[0] || '';
+      fields.end_time        = ends[0] || '';
+      fields.all_sessions    = dates.map(function(d, i){ return d + ' at ' + starts[i] + ' – ' + ends[i]; }).join(', ');
+
+      fetch(form.action, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(fields)
+      })
+      .then(function() {
+        form.style.display = 'none';
+        status.className = 'form-status success';
+        status.textContent = 'Request received. We will follow up with a formal invoice within 1 business day.';
+      })
+      .catch(function() {
+        btn.textContent = 'Submit Request →';
+        btn.disabled = false;
+        status.className = 'form-status error';
+        status.textContent = 'Something went wrong. Please email us directly at info@thestu.co';
+      });
+    });
+
+  </script>
+
+</body>
+</html>
